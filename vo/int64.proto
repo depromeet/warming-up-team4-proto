@@ -1,0 +1,7 @@
+syntax = "proto3";
+package warmup.vo;
+option java_package = "com.depromeet.warmup.grpc.vo";
+
+message Int64 {
+    int64 value = 1;
+}

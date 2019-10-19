@@ -1,0 +1,12 @@
+syntax = "proto3";
+package warmup.service;
+option java_package = "com.depromeet.warmup.grpc.service";
+
+import "google/protobuf/empty.proto";
+
+import "vo/int64.proto";
+
+service Chat {
+    // TODO: 채팅 보내기
+    rpc Send (google.protobuf.Empty) returns (vo.Int64);
+}

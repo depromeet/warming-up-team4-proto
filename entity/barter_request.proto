@@ -1,0 +1,16 @@
+syntax = "proto3";
+package warmup.entity;
+option java_package = "com.depromeet.warmup.grpc.entity";
+
+import "entity/item.proto";
+
+// 물물교환 요청
+message BarterRequest {
+    int64 id = 1;
+    Item from = 2;
+    Item to = 3;
+    string message = 4;
+
+    int64 created_date = 5;
+    int64 last_modified_date = 6;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+package warmup.service;
+option java_package = "com.depromeet.warmup.grpc.service";
+
+import "entity/barter_request.proto";
+import "entity/barter_transaction.proto";
+
+service Barter {
+    // 물물교환 신청
+    rpc Ask(AskRequest) returns (entity.BarterRequest);
+
+    // 물물교환 응답
+    rpc Answer(AnswerRequest) returns (entity.BarterTransaction);
+}
+
+message AskRequest {
+    int64 fromItemId = 1;
+    int64 toItemId = 2;
+    string message = 3;
+}
+
+message AnswerRequest {
+    int64 barterRequestId = 1;
+}

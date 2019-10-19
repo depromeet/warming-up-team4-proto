@@ -1,0 +1,19 @@
+syntax = "proto3";
+package warmup.service;
+option java_package = "com.depromeet.warmup.grpc.service";
+
+import "google/protobuf/empty.proto";
+
+import "entity/alarm.proto";
+
+service Notification {
+    // 알람 받기
+    rpc Subscribe(google.protobuf.Empty) returns (stream entity.Alarm);
+
+    // 알람 확인
+    rpc Check(stream CheckRequest) returns (google.protobuf.Empty);
+}
+
+message CheckRequest {
+    int64 alarmId = 1;
+}

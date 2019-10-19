@@ -1,0 +1,10 @@
+syntax = "proto3";
+package warmup.type;
+option java_package = "com.depromeet.warmup.grpc.type";
+
+enum BarterStatus {
+    WAIT = 0;
+    BARTERING = 1;
+    BARTERED = 2;
+    CANCELED = 3;
+}

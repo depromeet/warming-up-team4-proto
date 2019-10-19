@@ -1,14 +1,12 @@
 syntax = "proto3";
-package warmup;
-option java_package = "com.depromeet.warmup.grpc";
+package warmup.service;
+option java_package = "com.depromeet.warmup.grpc.service";
 
 service Health {
-
     // 서버 헬스 체크를 위한 에코 메시지
     rpc Echo (EchoMessage) returns (EchoMessage);
 }
 
 message EchoMessage {
-
     string value = 1;
 }

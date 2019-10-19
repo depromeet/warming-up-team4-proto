@@ -1,0 +1,14 @@
+syntax = "proto3";
+package warmup.entity;
+option java_package = "com.depromeet.warmup.grpc.entity";
+
+import "entity/university.proto";
+
+// 유저 정보
+message User {
+    string name = 1;
+    University university = 2;
+
+    int64 created_date = 3;
+    int64 last_modified_date = 4;
+}

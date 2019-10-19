@@ -1,0 +1,31 @@
+syntax = "proto3";
+package warmup.service;
+option java_package = "com.depromeet.warmup.grpc.service";
+
+import "entity/item.proto";
+
+service Item {
+    // 물품 등록
+    rpc Save(SaveRequest) returns (entity.Item);
+
+    // 물품 조회 (피드)
+    rpc FindAll(FindAllRequest) returns (stream entity.Item);
+
+    // 물품 상세 조회
+    rpc FindById(FindByIdRequest) returns (entity.Item);
+}
+
+message SaveRequest {
+    string name = 1;
+    string description = 2;
+    repeated string image_urls = 3;
+}
+
+message FindAllRequest {
+    int32 size = 1;
+    int32 lastId = 2;
+}
+
+message FindByIdRequest {
+    int64 id = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package warmup.entity;
+option java_package = "com.depromeet.warmup.grpc.entity";
+
+import "type/alarm_type.proto";
+
+// 알람
+message Alarm {
+    int64 id = 1;
+    string message = 2;
+    type.AlarmType type = 3;
+
+    int64 created_date = 4;
+    int64 last_modified_date = 5;
+}

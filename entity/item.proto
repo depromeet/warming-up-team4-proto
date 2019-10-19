@@ -1,0 +1,21 @@
+syntax = "proto3";
+package warmup.entity;
+option java_package = "com.depromeet.warmup.grpc.entity";
+
+import "entity/image.proto";
+import "entity/user.proto";
+
+import "type/barter_status.proto";
+
+// 아이템(물물교환 대상) 정보
+message Item {
+    string name = 1;
+    string description = 2;
+    type.BarterStatus barter_status = 3;
+    repeated Image images = 4;
+
+    User owner = 5;
+
+    int64 created_date = 6;
+    int64 last_modified_date = 7;
+}

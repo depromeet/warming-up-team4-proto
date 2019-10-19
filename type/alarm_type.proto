@@ -1,0 +1,7 @@
+syntax = "proto3";
+package warmup.type;
+option java_package = "com.depromeet.warmup.grpc.type";
+
+enum AlarmType {
+    TODO = 0;
+}

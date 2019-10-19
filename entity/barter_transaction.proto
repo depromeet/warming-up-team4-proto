@@ -1,0 +1,18 @@
+syntax = "proto3";
+package warmup.entity;
+option java_package = "com.depromeet.warmup.grpc.entity";
+
+import "entity/barter_request.proto";
+
+import "type/barter_status.proto";
+
+// 물물교환 거래
+message BarterTransaction {
+    int64 id = 1;
+    BarterRequest request = 2;
+    type.BarterStatus status = 3;
+
+    int64 created_date = 4;
+    int64 last_modified_date = 5;
+}
+

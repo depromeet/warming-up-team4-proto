@@ -1,0 +1,9 @@
+syntax = "proto3";
+package warmup.entity;
+option java_package = "com.depromeet.warmup.grpc.entity";
+
+// 이미지 정보
+message Image {
+    int64 id = 1;
+    string url = 2;
+}
