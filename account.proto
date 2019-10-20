@@ -4,12 +4,12 @@ option java_package = "com.depromeet.warmup.grpc.service";
 
 import "google/protobuf/empty.proto";
 
-import "entity/credential.proto";
+import "entity/authentication.proto";
 import "entity/user.proto";
 
 service Account {
     // 회원가입
-    rpc SignUp (SignUpRequest) returns (SignUpResponse);
+    rpc SignUp (SignUpRequest) returns (entity.Authentication);
 
     // 로그인
     rpc SignIn (SignInRequest) returns (SignInResponse);
@@ -24,18 +24,13 @@ message SignUpRequest {
     string nickname = 3;
 }
 
-message SignUpResponse {
-    entity.Credential credential = 1;
-    entity.User user = 2;
-}
-
 message SignInRequest {
     string email = 1;
     string password = 2;
 }
 
 message SignInResponse {
-    entity.User user = 1;
+    entity.Authentication authentication = 1;
     string accessToken = 2;
 }
 

@@ -6,7 +6,7 @@ import "entity/university.proto";
 
 // 유저 정보
 message User {
-    string name = 1;
+    string nickname = 1;
     University university = 2;
 
     int64 created_date = 3;
