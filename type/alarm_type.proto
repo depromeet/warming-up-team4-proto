@@ -3,5 +3,5 @@ package warmup.type;
 option java_package = "com.depromeet.warmup.grpc.type";
 
 enum AlarmType {
-    TODO = 0;
+    BARTER_REQUEST = 0;
 }
