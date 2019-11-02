@@ -1,0 +1,15 @@
+syntax = "proto3";
+package warmup.entity;
+option java_package = "com.depromeet.warmup.grpc.entity";
+
+import "entity/user.proto";
+
+// 채팅 메시지
+message ChatMessage {
+    int64 id = 1;
+    string message = 2;
+    User from = 3;
+    User to = 4;
+
+    int64 created_date = 5;
+}

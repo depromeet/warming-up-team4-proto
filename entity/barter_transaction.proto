@@ -15,4 +15,3 @@ message BarterTransaction {
     int64 created_date = 4;
     int64 last_modified_date = 5;
 }
-

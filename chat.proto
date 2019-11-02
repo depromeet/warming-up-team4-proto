@@ -4,9 +4,18 @@ option java_package = "com.depromeet.warmup.grpc.service";
 
 import "google/protobuf/empty.proto";
 
-import "vo/int64.proto";
+import "entity/chat_message.proto";
 
 service Chat {
-    // TODO: 채팅 보내기
-    rpc Send (google.protobuf.Empty) returns (vo.Int64);
+    rpc Join (stream ChatRequest) returns (stream ChatResponse);
+}
+
+message ChatRequest {
+    string message = 1;
+    int64 to = 2;
+}
+
+message ChatResponse {
+    string message = 1;
+    int64 from = 2;
 }
