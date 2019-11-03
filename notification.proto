@@ -9,14 +9,16 @@ import "entity/alarm.proto";
 import "type/alarm_type.proto";
 
 service Notification {
-    // 알람 보내기
-    rpc Notify(NotifyRequest) returns (google.protobuf.Empty);
-
     // 알람 받기
-    rpc Subscribe(google.protobuf.Empty) returns (stream entity.Alarm);
+    rpc Subscribe(google.protobuf.Empty) returns (stream Alarm);
 
     // 알람 확인
     rpc Check(stream CheckRequest) returns (google.protobuf.Empty);
+}
+
+message Alarm {
+    string message = 1;
+    type.AlarmType type = 2;
 }
 
 message NotifyRequest {
