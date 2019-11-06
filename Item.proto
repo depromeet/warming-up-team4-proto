@@ -3,6 +3,8 @@ package warmup.service;
 option java_package = "com.depromeet.warmup.grpc.service";
 
 import "entity/item.proto";
+import "type/category_type.proto";
+
 
 service Item {
     // 물품 등록
@@ -13,12 +15,19 @@ service Item {
 
     // 물품 상세 조회
     rpc FindById(FindByIdRequest) returns (entity.Item);
+
+    // 카테고리별 조회
+    rpc FindItemByCategory(FindByCategoryRequest) returns (entity.Item);
+
 }
 
 message SaveRequest {
     string name = 1;
     string description = 2;
-    repeated string image_urls = 3;
+    repeated string image = 3;
+    string place = 4;
+    type.Categories category = 5;
+    string tag = 6;
 }
 
 message FindAllRequest {
@@ -28,4 +37,8 @@ message FindAllRequest {
 
 message FindByIdRequest {
     int64 id = 1;
+}
+
+message FindByCategoryRequest {
+    type.Categories category = 1;
 }

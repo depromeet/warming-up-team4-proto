@@ -6,16 +6,22 @@ import "entity/image.proto";
 import "entity/user.proto";
 
 import "type/barter_status.proto";
+import "type/category_type.proto";
+
 
 // 아이템(물물교환 대상) 정보
 message Item {
+    int64 id = 11;
     string name = 1;
     string description = 2;
     type.BarterStatus barter_status = 3;
-    repeated Image images = 4;
+    repeated string images = 4;
+    string place = 5;
+    type.Categories category = 6;
+    string tag = 7;
 
-    User owner = 5;
+    User owner = 8;
 
-    int64 created_date = 6;
-    int64 last_modified_date = 7;
+    int64 created_date = 9;
+    int64 last_modified_date = 10;
 }

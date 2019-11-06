@@ -1,0 +1,16 @@
+syntax = "proto3";
+package warmup.type;
+option java_package = "com.depromeet.warmup.grpc.type";
+
+enum Categories {
+    FOOD = 0;
+    WOMAN = 1;
+    MAN = 2;
+    NECESSARIES = 3;
+    BEAUTY = 4;
+    ELECTRONICS = 5;
+    BOOK = 6;
+    FURNITURE = 7;
+    PET = 8;
+    ETC = 9;
+}
