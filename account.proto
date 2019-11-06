@@ -31,10 +31,12 @@ message SignInRequest {
 
 message SignInResponse {
     entity.Authentication authentication = 1;
+
+    // 인증 토큰
     string accessToken = 2;
 }
 
 message VerificationRequest {
-    string VerificationCode = 1;
+    string verificationCode = 1;
 }
 

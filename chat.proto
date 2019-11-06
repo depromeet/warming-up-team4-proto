@@ -7,15 +7,22 @@ import "google/protobuf/empty.proto";
 import "entity/chat_message.proto";
 
 service Chat {
+    // 채팅 참여
     rpc Join (stream ChatRequest) returns (stream ChatResponse);
 }
 
 message ChatRequest {
+    // 메시지 내용
     string message = 1;
+
+    // 받는 사람 PK
     int64 to = 2;
 }
 
 message ChatResponse {
+    // 메시지 내용
     string message = 1;
+
+    // 보내는 사람 PK
     int64 from = 2;
 }

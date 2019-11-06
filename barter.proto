@@ -14,12 +14,18 @@ service Barter {
 }
 
 message AskRequest {
+    // 요청하는 아이템 PK
     int64 fromItemId = 1;
+
+    // 교환 원하는 아이템 PK
     int64 toItemId = 2;
+
+    // 교환 요청할 때 메시지
     string message = 3;
 }
 
 message AnswerRequest {
+    // 거래 PK
     int64 barterRequestId = 1;
 }
 

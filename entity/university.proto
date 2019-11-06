@@ -5,5 +5,7 @@ option java_package = "com.depromeet.warmup.grpc.entity";
 // 대학 정보
 message University {
     string name = 1;
+
+    // 이메일 도메인 ex) test.com
     string emailDomain = 2;
 }
