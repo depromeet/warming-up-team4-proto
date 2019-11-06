@@ -22,3 +22,4 @@ message AskRequest {
 message AnswerRequest {
     int64 barterRequestId = 1;
 }
+
